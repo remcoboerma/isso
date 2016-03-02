@@ -22,13 +22,12 @@ class Dispatcher(DispatcherMiddleware):
     a relative URI, e.g. /foo.example and /other.bar.
     """
 
-    default = os.path.join(dist.location, "share", "isso.conf")
-
     def __init__(self, *confs):
-
         self.isso = {}
 
-        for i, conf in enumerate(map(config.load(Dispatcher.default, conf))):
+        default = os.path.join(dist.location, dist.project_name, "defaults.ini")
+        for i, path in enumerate(confs):
+            conf = config.load(default, path)
 
             if not conf.get("general", "name"):
                 logger.warn("unable to dispatch %r, no 'name' set", confs[i])

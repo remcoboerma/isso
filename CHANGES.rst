@@ -1,7 +1,31 @@
 Changelog for Isso
 ==================
 
-0.10 (unreleased)
+0.10.4 (unreleased)
+-------------------
+
+- Nothing changed yet.
+
+
+0.10.3 (2016-02-24)
+-------------------
+
+- follow redirects, #193
+
+
+0.10.2 (2016-02-21)
+-------------------
+
+- fix getAttribute return value
+
+
+0.10.1 (2016-02-06)
+-------------------
+
+- fix empty author, email and website values when writing a comment
+
+
+0.10 (2016-02-06)
 -----------------
 
 - add new configuration section for hash handling.
@@ -24,12 +48,29 @@ Changelog for Isso
   Intra emphasis would compile `foo_bar_baz` to foo<em>bar</em>baz. This
   behavior is very confusing for users not knowing the Markdown spec in detail.
 
-- new Bulgarian translation by sahwar, new Swedish translation by <Gustav
-  Näslund, #143
+- new configuration to require an email when submitting comments, #199. Set
+
+    [guard]
+    require-email = true
+
+  and use `data-isso-require-email="true"` to enable this feature. Disabled by
+  default.
+
+- new Bulgarian translation by sahwar, new Swedish translation by Gustav
+  Näslund – #143, new Vietnamese translation by Đinh Xuân Sâm, new Croatian
+  translation by streger, new Czech translation by Jan Chren
 
 - fix SMTP setup without credentials, #174
 
+- version pin Misaka to 1.x, html5lib to 0.9999999
+
 .. __: https://www.python.org/dev/peps/pep-0466/
+
+
+0.9.10 (2015-04-11)
+-------------------
+
+- fix regression in SMTP authentication, #174
 
 
 0.9.9 (2015-03-04)
